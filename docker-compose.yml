@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  # ── PostgreSQL Database ─────────────────────
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: translateai
+      POSTGRES_USER: translateai
+      POSTGRES_PASSWORD: translateai_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U translateai" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ── FastAPI Backend ─────────────────────────
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=postgresql://translateai:translateai_secret@db:5432/translateai
+      - SECRET_KEY=your-production-secret-key-change-this
+      - DEBUG=false
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - uploads:/app/uploads
+
+  # ── React Frontend ─────────────────────────
+  frontend:
+    build: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+
+volumes:
+  pgdata:
+  uploads:

@@ -1,0 +1,13 @@
+# TranslateAI Pro — .gitignore
+__pycache__/
+*.py[cod]
+*.db
+.env
+uploads/
+node_modules/
+dist/
+.vite/
+*.log
+venv/
+pip_log.txt
+.env.example
