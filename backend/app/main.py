@@ -54,12 +54,11 @@ _origins = [
     "http://localhost:5173",
     "http://localhost:3000",
     "http://127.0.0.1:5173",
+    "*",  # Temporary wildcard to debug CORS issues
 ]
 _frontend_url = os.getenv("FRONTEND_URL")
 if _frontend_url:
     _origins.append(_frontend_url)
-else:
-    _origins.append("*")  # allow all in dev; set FRONTEND_URL in production
 
 app.add_middleware(
     CORSMiddleware,
