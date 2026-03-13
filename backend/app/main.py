@@ -4,6 +4,7 @@ Configures CORS, rate limiting, routing, and startup events.
 """
 
 import logging
+import os
 from contextlib import asynccontextmanager
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
