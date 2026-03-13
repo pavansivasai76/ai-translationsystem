@@ -53,8 +53,7 @@ app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 _origins = [
     "http://localhost:5173",
     "http://localhost:3000",
-    "http://127.0.0.1:5173",
-    "*",  # Temporary wildcard to debug CORS issues
+    "https://ai-translationsystem.vercel.app",  # Temporary wildcard to debug CORS issues
 ]
 _frontend_url = os.getenv("FRONTEND_URL")
 if _frontend_url:
