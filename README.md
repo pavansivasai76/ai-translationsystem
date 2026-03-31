@@ -32,7 +32,7 @@
 │  └──────────────────────────────────────┘       │
 │  ┌──────────────────────────────────────┐       │
 │  │           AI Services                 │       │
-│  │  Translation (Helsinki-NLP/opus-mt)  │       │
+│  │  Translation (IndiaTrans2)  │       │
 │  │  OCR (Tesseract + Preprocessing)     │       │
 │  │  PDF (PyPDF2 + OCR Fallback)         │       │
 │  │  NLP (Summarize + Sentiment + KW)    │       │
