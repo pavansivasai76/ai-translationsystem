@@ -261,14 +261,4 @@ docker-compose up --build
 | **AI/NLP** | HuggingFace Transformers, Tesseract OCR, TextBlob, YAKE |
 | **Database** | SQLite (dev) / PostgreSQL (prod) |
 | **Auth** | JWT (python-jose), BCrypt |
-| **Deploy** | Docker, Docker Compose, Nginx |
-
----
-
-## 📜 License
-
-MIT License — Built for educational purposes.
-
----
-
-<p align="center">Built with ❤️ using <b>FastAPI</b> + <b>React</b> + <b>AI/NLP</b></p>
+| **Deploy** | Docker, Docker Compose, Nginx 
